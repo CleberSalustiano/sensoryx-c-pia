@@ -10,8 +10,17 @@ ul {
   list-style: none;
 }
 a {
+  font: var(--font);
+  color: white;
   text-decoration: none;
+  transition: color 0.4s;
+  cursor: pointer;
 }
+
+a:hover {
+  color: #57b9a8;
+}
+
 img {
   width: 100%;
   height: auto;
@@ -29,13 +38,12 @@ p {
   display: flex;
   height: 6.32rem;
   align-items: center;
-  justify-content: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.253);
+  justify-content: space-between;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-bottom: 1px solid rgba(126, 122, 122, 0.226);
 }
 
-.container .logo {
-  margin-right: 15.63rem;
-}
 .container .menu {
   color: white;
 }
@@ -47,9 +55,9 @@ p {
 }
 
 .container p {
-  margin-top: 0rem;
+  margin-top: 0.1rem;
   color: #eeeeee;
-  font: 300 0.875rem var(--font);
+  font: 500 0.875rem var(--font);
 }
 
 .background {
@@ -58,7 +66,7 @@ p {
   z-index: -1;
   bottom: 6.32rem;
   left: 0;
-  margin-bottom: -6.8rem;
+  margin-bottom: -6.6rem;
 }
 body {
   position: relative;
@@ -67,7 +75,7 @@ body {
 }
 
 body.show {
-  right: 80%;
+  right: 90vw;
 }
 
 body.show .icon-menu {
@@ -82,64 +90,11 @@ body.show::before {
   position: absolute;
   z-index: 1;
 }
-
-nav#nav {
-  position: absolute;
-  visibility: hidden;
-  opacity: 0;
-}
-
-nav#nav.show {
-  visibility: visible;
-  opacity: 1;
-  display: flex;
-  right: -80%;
-  top: 0;
-  width: 20rem;
-  justify-content: end;
-  align-items: center;
-  text-align: center;
-  line-height: 5rem;
-}
-
-nav#nav.show li a {
-  display: inline-block;
-  font: bold 1rem var(--font);
-  padding: 1.8rem;
-  border-bottom: 1px solid rgba(128, 121, 121, 0.178);
-  color: black;
-  width: 320px;
-  transition: color 0.4s;
-}
-
-nav#nav.show li a:hover {
-  color: #57b9a8;
-}
-
-nav#nav.show li a.button {
-  display: flex;
-  width: 300px;
-  border: 2px solid #57b9a8;
-  border-radius: 5px;
-  margin-top: 2rem;
-  height: 3rem;
-  background: #57b9a8;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  transition: 0.4s;
-}
-
-nav#nav.show li a.button:hover {
-  color: #57b9a8;
-  background: white;
-}
-
 #header .icon-menu {
   color: white;
-  font-size: 2rem;
+  font-size: 1.8rem;
   border: 2px solid white;
-  padding: 1rem;
+  padding: 0.8rem;
   border-radius: 5rem;
   transition: 0.4s;
 }
@@ -153,9 +108,9 @@ nav#nav.show li a.button:hover {
 #header #nav .icon-close {
   display: inline-block;
   color: black;
-  font-size: 2rem;
+  font-size: 1.8rem;
   border: 2px solid #57b9a8;
-  padding: 1rem;
+  padding: 0.7rem;
   border-radius: 5rem;
   margin-top: 1.5rem;
   transition: 0.3s;
@@ -166,6 +121,73 @@ nav#nav.show li a.button:hover {
   color: white;
   cursor: pointer;
 }
+#header {
+  display: inline-block;
+}
+nav#nav {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+nav#nav.show {
+  visibility: visible;
+  opacity: 1;
+  display: inline-flex;
+  right: -90vw;
+  background-color: white;
+  height: 100vh;
+  width: 90vw;
+  top: 0;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+  line-height: 5rem;
+  transition: 0.4s;
+}
+nav#nav li a {
+  display: block;
+  margin: 0;
+  font: bold 1rem var(--font);
+  transition: color 0.4s;
+}
+nav#nav.show li a {
+  width: 90vw;
+  padding: 1.8rem 0;
+  border-bottom: 1px solid rgba(44, 43, 43, 0.13);
+  color: black;
+}
+
+nav#nav li a:hover {
+  color: #57b9a8;
+}
+nav#nav.show li div {
+  width: 80;
+  display: flex;
+  justify-content: center;
+}
+nav#nav.show li a.button {
+  display: flex;
+  margin-top: 2rem;
+  height: 1.2rem;
+  padding: 1.4rem 0;
+  width: 17.5rem;
+}
+nav#nav li a.button {
+  font: bold 0.9rem var(--font);
+  border: 2px solid #57b9a8;
+  border-radius: 5px;
+  background: #57b9a8;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: 0.4s;
+}
+nav#nav li a.button:hover {
+  color: #57b9a8;
+  background: white;
+}
 
 /* contagem */
 #home {
@@ -174,7 +196,7 @@ nav#nav.show li a.button:hover {
   align-items: center;
   padding: 2rem 0;
   justify-content: center;
-  background: linear-gradient(rgb(94, 133, 131), rgb(76, 76, 129));
+  background: linear-gradient(#3b8a7dd5, rgb(13 45 98 / 90%));
   color: white;
   margin-bottom: 5rem;
 }
@@ -184,31 +206,38 @@ nav#nav.show li a.button:hover {
 }
 
 #home p {
-  font: normal 1.2rem var(--font);
-  max-width: 25.2rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  font: 600 1.2rem var(--font);
   text-align: center;
   line-height: 36px;
+}
+
+#home > div > p {
+  width: 25rem;
 }
 
 #contador {
   display: grid;
   grid-template-areas:
-    'days hours minutes'
-    'seconds seconds seconds';
+    'days hours'
+    'minutes seconds';
   align-items: center;
   justify-content: center;
   text-align: center;
   margin-top: 3rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 #contador div[id] {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-width: 8.2rem;
+  width: 42vw;
   height: 7.5rem;
   margin: 0 13px 10px 0;
-  background: rgba(0, 0, 0, 0.39);
+  background: rgba(0, 0, 0, 0.507);
   border-radius: 5px;
   font: normal 1.2rem var(--font);
 }
@@ -218,6 +247,11 @@ nav#nav.show li a.button:hover {
   border-bottom: 1.5px solid rgba(255, 255, 255, 0.157);
   margin-bottom: 0.3rem;
 }
+
+#contador p {
+  font: 500 1.12rem var(--font);
+}
+
 #contador #day {
   grid-area: days;
 }
@@ -239,9 +273,12 @@ nav#nav.show li a.button:hover {
   grid-template-areas:
     'h2'
     'p';
+  width: 100%;
   flex-direction: column;
-  align-items: right;
+  align-items: center;
   justify-content: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 #about h2 {
   grid-area: h2;
@@ -251,10 +288,10 @@ nav#nav.show li a.button:hover {
 
 #about p {
   grid-area: p;
-  width: 28.125rem;
+  max-width: 450px;
   text-align: left;
-  font: 300 1.25rem var(--font);
-  line-height: 2.2rem;
+  font: 300 1.15rem var(--font);
+  line-height: 2rem;
 }
 
 #about .button-read-more {
@@ -283,17 +320,21 @@ nav#nav.show li a.button:hover {
   margin-top: 5rem;
   display: grid;
   grid-template-areas:
-    'h2'
-    'a';
+    'h2 span'
+    'a  span';
   align-items: center;
 
   height: 15rem;
   background: #212127;
-  min-width: 14.4rem;
-  align-items: right;
   flex-direction: column;
-  align-items: right;
+  align-items: center;
   justify-content: center;
+  column-gap: 23.75rem;
+  padding-left: 1rem;
+}
+
+#footer > div > span {
+  grid-area: span;
 }
 
 #footer h2 {
@@ -302,7 +343,6 @@ nav#nav.show li a.button:hover {
   top: 1rem;
   color: white;
   font: bold 1.25rem var(--font);
-  width: 28.125rem;
 }
 
 #footer h2::before {
@@ -340,4 +380,269 @@ nav#nav.show li a.button:hover {
 
 #footer a svg:hover {
   background: none;
+}
+footer div:last-child {
+  color: #ffffffcc;
+  background-color: #1e1e24;
+  text-align: center;
+  font: normal 1rem var(--font);
+  padding: 0.5rem 0.8rem;
+  border: 1px solid #1e1e24;
+  width: 100%;
+  align-items: center;
+  display: inline-block;
+  justify-content: center;
+}
+
+footer div:last-child a {
+  color: #ffffffcc;
+}
+
+footer div:last-child div {
+  max-width: 29rem;
+}
+
+/*compatibilities*/
+/*devices > 400*/
+@media (min-width: 400px) {
+  body.show {
+    right: 80vw;
+  }
+  nav#nav.show {
+    width: 20rem;
+    right: -80vw;
+    justify-content: right;
+  }
+  nav#nav.show li a {
+    width: 20rem;
+  }
+}
+
+/*devices > 460*/
+@media (min-width: 459px) {
+  #contador {
+    grid-template-areas:
+      'days hours minutes'
+      'seconds seconds seconds';
+    margin-left: 0;
+    margin-right: 0;
+    width: 90vw;
+  }
+  #contador div[id] {
+    width: auto;
+    padding: 1.4rem;
+  }
+}
+
+/*devices > 545*/
+@media (min-width: 545px) {
+  .container {
+    justify-content: center;
+  }
+  .container .logo {
+    margin-right: 15.63rem;
+  }
+}
+
+/*devices > 768*/
+@media (min-width: 768px) {
+  .container .logo {
+    margin-right: 31rem;
+  }
+  .background {
+    height: 37rem;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    border: 1px solid rgba(199, 192, 192, 0.116);
+  }
+
+  body.show {
+    right: 50vw;
+  }
+
+  nav#nav.show {
+    right: -50vw;
+    width: 25rem;
+  }
+
+  nav#nav.show li a {
+    width: 25rem;
+  }
+
+  nav#nav.show li a.button {
+    width: 22.5rem;
+  }
+
+  #home {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+    height: 37rem;
+    background: linear-gradient(#1a3b36d5, #1f3b44e3, #1d1d2c);
+  }
+
+  #home h2 {
+    margin-top: 2rem;
+  }
+
+  #home > div > p {
+    width: 35rem;
+  }
+
+  #contador {
+    grid-template-areas: 'days hours minutes seconds';
+  }
+  #contador div[id] {
+    width: 10.44rem;
+  }
+  #about {
+    margin-top: 4rem;
+  }
+  #about p {
+    max-width: 46.875rem;
+  }
+  #about .button-read-more {
+    max: 10rem;
+  }
+  #footer {
+    column-gap: 40.5rem;
+  }
+  footer div:last-child {
+    padding: 0.4rem 0;
+  }
+  footer div:last-child div {
+    max-width: 46rem;
+  }
+}
+/*devices > 1025*/
+@media (min-width: 1024px) {
+  .container {
+    height: 7.5rem;
+    justify-content: space-between;
+  }
+
+  .background {
+    top: -7.5rem;
+    height: 42.5rem;
+    width: 100vw;
+  }
+
+  .container .logo {
+    margin-right: 0;
+  }
+
+  #home {
+    height: 42.5rem;
+  }
+
+  #home h2 {
+    margin-top: 0rem;
+    font-size: 3.94rem;
+  }
+  #home p {
+    font-size: 1.4rem;
+  }
+  #home > div > p {
+    width: 40rem;
+  }
+
+  #contador div[id] {
+    height: 9.4rem;
+    margin-right: 4rem;
+  }
+
+  #contador div[id]:last-child {
+    margin: 0;
+  }
+
+  #contador .numero {
+    font-size: 3.87rem;
+  }
+
+  #header #nav .icon-close,
+  #header .icon-menu {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  nav#nav {
+    position: absolute;
+    visibility: visible;
+    opacity: 1;
+    height: 7.5rem;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    z-index: 1;
+    right: 0px;
+    top: 0;
+  }
+  nav#nav ul {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1rem;
+  }
+
+  nav#nav ul li a {
+    font-size: 0.875rem;
+  }
+
+  nav#nav li a.button {
+    padding: 0.8rem 1.4rem;
+  }
+  nav#nav li a.button:hover {
+    background: none;
+  }
+
+  #about p {
+    max-width: 60.625rem;
+  }
+
+  #footer {
+    column-gap: 56.2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  footer div:last-child div {
+    max-width: 60.625rem;
+  }
+}
+
+/*devices > 1200 */
+@media (min-width: 1200px) {
+  .background {
+    height: 45.2rem;
+  }
+  #home {
+    height: 45.2rem;
+  }
+
+  #home h2 {
+    font-size: 3.25rem;
+    margin-top: 3rem;
+  }
+
+  #contador div[id] {
+    margin-right: 7rem;
+    margin-top: 4rem;
+  }
+
+  #contador div[id]:last-child {
+    margin-top: 4rem;
+  }
+
+  #about p {
+    max-width: 73.125rem;
+  }
+
+  #footer {
+    column-gap: 68.5rem;
+  }
 }
