@@ -398,6 +398,10 @@ footer div:last-child a {
   color: #ffffffcc;
 }
 
+footer div:last-child div a:hover {
+  color: #57b9a8;
+}
+
 footer div:last-child div {
   max-width: 29rem;
 }
@@ -528,7 +532,7 @@ footer div:last-child div {
   .background {
     top: -7.5rem;
     height: 42.5rem;
-    width: 100vw;
+    width: 99vw;
   }
 
   .container .logo {
