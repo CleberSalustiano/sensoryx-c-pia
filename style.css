@@ -503,6 +503,7 @@ footer div:last-child div {
   #contador div[id] {
     width: 10.44rem;
   }
+
   #about {
     margin-top: 4rem;
   }
@@ -532,7 +533,6 @@ footer div:last-child div {
   .background {
     top: -7.5rem;
     height: 42.5rem;
-    width: 99vw;
   }
 
   .container .logo {
@@ -557,6 +557,16 @@ footer div:last-child div {
   #contador div[id] {
     height: 9.4rem;
     margin-right: 4rem;
+  }
+
+  #contador div[id]:nth-child(1)::after,
+  #contador div[id]:nth-child(2)::after,
+  #contador div[id]:nth-child(3)::after {
+    content: ':';
+    position: absolute;
+    margin-left: 235px;
+    font: bold 2.25rem var(--font);
+    color: rgba(195, 193, 193, 0.897);
   }
 
   #contador div[id]:last-child {
@@ -638,6 +648,12 @@ footer div:last-child div {
     margin-top: 4rem;
   }
 
+  #contador div[id]:nth-child(1)::after,
+  #contador div[id]:nth-child(2)::after,
+  #contador div[id]:nth-child(3)::after {
+    margin-left: 280px;
+  }
+
   #contador div[id]:last-child {
     margin-top: 4rem;
   }
@@ -648,5 +664,32 @@ footer div:last-child div {
 
   #footer {
     column-gap: 68.5rem;
+  }
+}
+/*devices > 1378*/
+@media (min-width: 1378px) {
+  .background {
+    width: 100vw;
+  }
+}
+
+/*devices > 1451*/
+
+@media (min-width: 1451px) {
+  .background {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .container {
+    margin-left: 120px;
+  }
+
+  nav#nav {
+    margin-right: 120px;
+  }
+
+  #home {
+    height: 100vh;
   }
 }
