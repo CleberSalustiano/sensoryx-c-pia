@@ -668,8 +668,17 @@ footer div:last-child div {
 }
 /*devices > 1378*/
 @media (min-width: 1378px) {
+  body {
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
   .background {
-    width: 98.5vw;
+    width: 100vw;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
   }
 }
 
